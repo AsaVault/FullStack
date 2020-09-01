@@ -3,7 +3,9 @@
   "name": "asp.net",
   "private": true,
   "dependencies": {
-    "jquery": "3.5.1"
+    "jquery": "3.5.1",
+    "jquery-validation": "^1.17.0",
+    "jquery-validation-unobtrusive": "^3.2.10"
   },
   "devDependencies": {}
 }
