@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "anu4pH9BoqdeEhPFO9RsPe4Z7L04G9SBsf6v0f9cKpgBJJ0bL3+LvAJOrd4h+ZSFQ4RYk9fuHnvZJNQa6Grhxg==",
+  "dgSpecHash": "6B3EYg7GcQn4OhjS3KBZDCpQvsb4Mx8T4inV/uJQYM0jS/BdMZIUak6UpTr/mr3A/GVelvXiKu0K0WZIIoFkVA==",
   "success": true,
   "projectFilePath": "C:\\Users\\User\\source\\repos\\FullStack\\BookWatch\\BookWatch.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\odetocode.usenodemodules\\3.0.0\\odetocode.usenodemodules.3.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
