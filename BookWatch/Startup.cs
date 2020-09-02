@@ -2,10 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookWatch.Data;
+using BookWatch.Data.Entities;
+using BookWatch.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -15,9 +20,22 @@ namespace BookWatch
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        private readonly IConfiguration _config;
+        public Startup(IConfiguration config)
+        {
+            _config = config;
+        }
         public void ConfigureServices(IServiceCollection services)
         {
-           // services.AddControllersWithViews();
+            // services.AddControllersWithViews();
+            services.AddDbContext<BookWatchContext>(cfg => 
+            {
+                cfg.UseSqlServer(_config.GetConnectionString("BookWatchConnectionString"));
+            });
+
+            services.AddTransient<BookWatchSeeder>();
+            services.AddScoped<IBookWatchRepository, BookWatchRepository>();
+            services.AddScoped<IMailSender, NullMailSender>();
             services.AddControllersWithViews();
         }
 
