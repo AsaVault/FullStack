@@ -1,5 +1,7 @@
 ﻿using BookWatch.Data.Entities;
 using DutchTreat.Data.Entities;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -20,6 +22,9 @@ namespace BookWatch.Data
             _ctx = ctx;
             _logger = logger;
         }
+
+        
+
         public IEnumerable<Product> GetAllProducts()
         {
             try
@@ -44,6 +49,21 @@ namespace BookWatch.Data
             return _ctx.Product
                        .Where(p => p.Category == category)
                        .ToList();
+        }
+
+        public  IEnumerable<Order> GetAllOrders()
+        {
+            var result = _ctx.Order
+                //.Include(o=>o.Items)
+                //.ThenInclude(p=>p.Product)
+                .ToList();
+            return result;
+        }
+
+        public Order GetOrderById(int id)
+        {
+            var result = _ctx.Order.FirstOrDefault(o => o.Id == id);
+            return result;
         }
 
         public bool SaveAll()

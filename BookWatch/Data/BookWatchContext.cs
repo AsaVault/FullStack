@@ -26,7 +26,7 @@ namespace BookWatch.Data.Entities
                 {
                 Id =1,
                 OrderDate = DateTime.UtcNow,
-                OrderNumber = "1234"
+                OrderNumber = "12345"
                 });
         }
     }
