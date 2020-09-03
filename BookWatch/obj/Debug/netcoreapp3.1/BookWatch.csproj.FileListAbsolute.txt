@@ -152,5 +152,7 @@ C:\Users\User\source\repos\FullStack\BookWatch\bin\Debug\netcoreapp3.1\Microsoft
 C:\Users\User\source\repos\FullStack\BookWatch\obj\Debug\netcoreapp3.1\Razor\Views\App\Shop.cshtml.g.cs
 C:\Users\User\source\repos\FullStack\BookWatch\bin\Debug\netcoreapp3.1\Data\art.json
 C:\Users\User\source\repos\FullStack\BookWatch\bin\Debug\netcoreapp3.1\Data\item.json
+C:\Users\User\source\repos\FullStack\BookWatch\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\User\source\repos\FullStack\BookWatch\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\User\source\repos\FullStack\BookWatch\obj\Debug\netcoreapp3.1\BookWatch.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\FullStack\BookWatch\obj\Debug\netcoreapp3.1\BookWatch.MvcApplicationPartsAssemblyInfo.cache

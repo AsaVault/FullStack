@@ -69,5 +69,10 @@ namespace BookWatch.Data
         {
             return _ctx.SaveChanges() > 0;
         }
+
+        public void AddEntity(object model)
+        {
+            _ctx.Add(model);
+        }
     }
 }

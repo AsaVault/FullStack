@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
+using AutoMapper;
 using BookWatch.Data;
 using BookWatch.Data.Entities;
 using BookWatch.Services;
@@ -34,6 +36,7 @@ namespace BookWatch
                 cfg.UseSqlServer(_config.GetConnectionString("BookWatchConnectionString"));
             });
 
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddTransient<BookWatchSeeder>();
             services.AddScoped<IBookWatchRepository, BookWatchRepository>();
             services.AddScoped<IMailSender, NullMailSender>();
