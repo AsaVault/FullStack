@@ -37,7 +37,6 @@ namespace BookWatch.Data
             }
             catch (Exception ex)
             {
-
                 _logger.LogError($"Failed to get all products: {ex}");
                 return null;
             }
