@@ -17,8 +17,8 @@ namespace BookWatch.Data
         .ForMember(o => o.OrderId, ex => ex.MapFrom(o => o.Id))
         .ReverseMap();
 
-            //CreateMap<OrderItem, OrderItemViewModel>()
-              //.ReverseMap();
+            CreateMap<OrderItem, OrderItemViewModel>()
+              .ReverseMap();
         }
     }
 }
