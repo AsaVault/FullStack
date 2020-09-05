@@ -41,9 +41,9 @@ namespace BookWatch
             services.AddScoped<IBookWatchRepository, BookWatchRepository>();
             services.AddScoped<IMailSender, NullMailSender>();
             //services.AddControllersWithViews().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-            services.AddMvc()
+            services.AddControllers()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-                //.AddJsonOptions(opt=>opt.SerializerSettings)
+                //.AddJsonOptions(opt => opt.JsonSerializerOptions);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
