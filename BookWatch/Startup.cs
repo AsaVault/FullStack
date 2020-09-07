@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -41,9 +42,10 @@ namespace BookWatch
             services.AddScoped<IBookWatchRepository, BookWatchRepository>();
             services.AddScoped<IMailSender, NullMailSender>();
             //services.AddControllersWithViews().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-            services.AddControllers()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-                //.AddJsonOptions(opt => opt.JsonSerializerOptions);
+            services.AddControllersWithViews()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
+                .AddJsonOptions(opt => opt.JsonSerializerOptions.IgnoreNullValues = true
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

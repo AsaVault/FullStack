@@ -53,8 +53,8 @@ namespace BookWatch.Data
         public  IEnumerable<Order> GetAllOrders()
         {
             var result = _ctx.Order
-                //.Include(o=>o.Items)
-                //.ThenInclude(p=>p.Product)
+                .Include(o=>o.Items)
+                .ThenInclude(p=>p.Product)
                 .ToList();
             return result;
         }
